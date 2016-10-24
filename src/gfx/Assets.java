@@ -15,17 +15,17 @@ public class Assets {
         SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/sheet.png"));
 
         grass = sheet.crop(15, 15, width, height);
-        dirt = sheet.crop(280, 81, width, height);
+        dirt = sheet.crop(279, 81, width, height);
         grassDirt = sheet.crop(280, 15, width, height);
         tunnelx = sheet.crop(213, 279, width, height);
         tunnelTtop = sheet.crop(147, 213, width, height);
         tunnelTbottom = sheet.crop(147, 147, width, height);
-        tunnelTleft = sheet.crop(15, 81, width, height); // NINCS ILYEN A SHEET-BEN !!! --done
-        tunnelTright = sheet.crop(81, 81, width, height); // NINCS ILYEN A SHEET-BEN !!! --done
+        tunnelTleft = sheet.crop(15, 81, width, height);
+        tunnelTright = sheet.crop(81, 81, width, height);
         tunnelLtopR = sheet.crop(15, 146, width, height);
         tunnelLtopL = sheet.crop(279, 279, width, height);
         tunnelLbottomL = sheet.crop(279, 147, width, height);
-        tunnelLbottomR = sheet.crop(147, 81, width, height); // NINCS ILYEN A SHEET-BEN !!! --done
+        tunnelLbottomR = sheet.crop(147, 81, width, height);
         tunnelHor = sheet.crop(477, 279, width, height);
         tunnelVer = sheet.crop(477, 213, width, height);
 
