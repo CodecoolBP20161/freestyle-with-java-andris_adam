@@ -29,8 +29,10 @@ public class GameState extends State {
 //        g.drawImage(Assets.grass, 10, 10, null);
 //        g.drawImage(mapGenerator.draw(), 100, 100, null);
         for (int i = 0; i < mapGenerator.tile.length; i++) {
-            g.drawImage(mapGenerator.tile[0][i].image, 0, i*62, null);
+            for (int j = 0; j < mapGenerator.tile.length; j++) {
+                g.drawImage(mapGenerator.tile[0][3].image, j*62, i * 62, null);
+            }
         }
-//        player.render(g);
+        player.render(g);
     }
 }

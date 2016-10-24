@@ -23,7 +23,7 @@ public class MapGenerator {
     }
 
     public BufferedImage draw(){
-        return tile[0][5].image;
+        return tile[0][1].image;
     }
 
 
