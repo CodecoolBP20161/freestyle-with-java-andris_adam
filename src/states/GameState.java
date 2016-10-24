@@ -1,6 +1,7 @@
 package states;
 
 
+import entities.creatures.Ant;
 import entities.creatures.Player;
 import gfx.Assets;
 import main.Game;
@@ -11,17 +12,19 @@ import java.awt.*;
 public class GameState extends State {
 
     private Player player;
+    private Ant ant;
     private MapGenerator mapGenerator;
 
     public GameState(Game game){
         super(game);
-        player = new Player(game, 100, 100);
+//        player = new Player(game, 100, 100);
+        ant = new Ant(game, 100, 100);
         mapGenerator = new MapGenerator();
     }
 
     @Override
     public void tick() {
-        player.tick();
+        ant.tick();
     }
 
     @Override
@@ -33,6 +36,6 @@ public class GameState extends State {
                 g.drawImage(mapGenerator.tile[0][3].image, j*62, i * 62, null);
             }
         }
-        player.render(g);
+        ant.render(g);
     }
 }
