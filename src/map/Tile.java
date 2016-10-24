@@ -3,7 +3,7 @@ package map;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public abstract class Tile {
+public class Tile {
 
     protected int x, y;
     protected boolean top, bottom, left, right;

@@ -11,12 +11,12 @@ import java.awt.*;
 public class GameState extends State {
 
     private Player player;
-    private MapGenerator tile;
+    private MapGenerator mapGenerator;
 
     public GameState(Game game){
         super(game);
         player = new Player(game, 100, 100);
-        tile = new MapGenerator();
+        mapGenerator = new MapGenerator();
     }
 
     @Override
@@ -26,8 +26,11 @@ public class GameState extends State {
 
     @Override
     public void render(Graphics g) {
-        g.drawImage(Assets.grass, 10, 10, null);
-        g.drawImage(tile.draw(), 100, 100, null);
-        player.render(g);
+//        g.drawImage(Assets.grass, 10, 10, null);
+//        g.drawImage(mapGenerator.draw(), 100, 100, null);
+        for (int i = 0; i < mapGenerator.tile.length; i++) {
+            g.drawImage(mapGenerator.tile[0][i].image, 0, i*62, null);
+        }
+//        player.render(g);
     }
 }
