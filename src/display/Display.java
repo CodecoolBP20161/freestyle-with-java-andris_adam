@@ -6,6 +6,15 @@ import java.awt.*;
 public class Display {
     private JFrame frame;
     private Canvas canvas;
+
+    public Canvas getCanvas() {
+        return canvas;
+    }
+
+    public JFrame getFrame(){
+        return frame;
+    }
+
     private String title;
     private int width, height;
 
@@ -14,10 +23,6 @@ public class Display {
         this.width = width;
         this.height = height;
         createDisplay();
-    }
-
-    public Canvas getCanvas() {
-        return canvas;
     }
 
     private void createDisplay(){
@@ -32,9 +37,11 @@ public class Display {
         canvas.setPreferredSize(new Dimension(width, height));
         canvas.setMaximumSize(new Dimension(width, height));
         canvas.setMinimumSize(new Dimension(width, height));
+        canvas.setFocusable(false);
 
         frame.add(canvas);
         frame.pack();
     }
+
 
 }

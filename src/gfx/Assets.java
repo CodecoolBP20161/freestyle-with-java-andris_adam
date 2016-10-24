@@ -4,14 +4,14 @@ import java.awt.image.BufferedImage;
 
 public class Assets {
 
-    private static final int width = 32, height = 32;
+    private static final int width = 60, height = 60;
 
-    public static BufferedImage player, dirt, grass, stone, tree;
+    public static BufferedImage dirt, grass, stone, tree;
 
     public static void init(){
-        SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/sun.jpg"));
+        SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/sheet.png"));
 
-        player = sheet.crop(0, 0, width, height);
+        grass = sheet.crop(15, 15, width, height);
 //        dirt = sheet.crop(width, 0, width, height);
 
     }

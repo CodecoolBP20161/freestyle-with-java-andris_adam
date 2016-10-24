@@ -1,23 +1,29 @@
 package states;
 
 
+import entities.creatures.Player;
 import gfx.Assets;
+import main.Game;
 
 import java.awt.*;
 
 public class GameState extends State {
 
-    public GameState(){
+    private Player player;
 
+    public GameState(Game game){
+        super(game);
+        player = new Player(game, 100, 100);
     }
 
     @Override
     public void tick() {
-
+        player.tick();
     }
 
     @Override
     public void render(Graphics g) {
-
+        g.drawImage(Assets.grass, 10, 10, null);
+        player.render(g);
     }
 }
