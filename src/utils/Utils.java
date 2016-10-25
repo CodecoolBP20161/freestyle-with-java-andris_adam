@@ -1,5 +1,8 @@
 package utils;
 
+import gfx.Assets;
+import tiles.Tile;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -32,4 +35,13 @@ public class Utils {
             return 0;
         }
     }
+
+    public static int placeInTileX(float x){
+        return (int) (Tile.TILEWIDTH*x + Tile.TILEWIDTH/2) - Assets.ant_width/2;
+    }
+
+    public static int placeInTileY(float y){
+        return (int) (Tile.TILEHEIGHT*y + Tile.TILEHEIGHT/2)-Assets.ant_height/2;
+    }
+
 }

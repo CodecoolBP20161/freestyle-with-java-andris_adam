@@ -2,6 +2,9 @@ package entities.creatures;
 
 import gfx.Assets;
 import main.Game;
+import tiles.Tile;
+import utils.Utils;
+import worlds.WorldGenerator;
 
 import java.awt.*;
 
@@ -12,21 +15,27 @@ public class Ant extends Creature {
     private long lastTime = System.nanoTime();
     private String last = "";
 
-    public Ant(Game game, float x, float y) {
-        super(x, y);
+    public Ant(Game game, float x, float y, WorldGenerator world) {
+        super(Utils.placeInTileX(x), Utils.placeInTileY(y), world);
         this.game = game;
     }
 
     @Override
     public void tick() {
-        if (game.getKeyManager().up)
-            y -= 3;
-        if (game.getKeyManager().down)
-            y += 3;
-        if (game.getKeyManager().left)
-            x -= 3;
-        if (game.getKeyManager().right)
-            x += 3;
+//        Tile currentTile = this.world.getTile(this.getTileX(), this.getTileY());
+//        System.out.println(currentTile);
+
+//        if (game.getKeyManager().up)
+//            y -= 3;
+//        if (game.getKeyManager().down)
+//            y += 3;
+//        if (game.getKeyManager().left)
+//            x -= 3;
+//        if (game.getKeyManager().right)
+//            x += 3;
+
+        x-=1;
+
     }
 
     @Override

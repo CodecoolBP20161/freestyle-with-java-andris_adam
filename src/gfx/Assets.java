@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 public class Assets {
 
     private static final int width = 62, height = 62;
-    private static final int ant_width = 27, ant_height = 22;
+    public static final int ant_width = 27, ant_height = 22;
 
     public static BufferedImage grass, dirt, grassDirt, tunnelx, tunnelTtop, tunnelTbottom, tunnelTleft, tunnelTright,
     tunnelLtopR, tunnelLtopL, tunnelLbottomL, tunnelLbottomR, tunnelHor, tunnelVer, antStayLeft, antRunLeft,
