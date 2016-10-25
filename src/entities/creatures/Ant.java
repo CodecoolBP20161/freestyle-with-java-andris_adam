@@ -8,6 +8,7 @@ import worlds.WorldGenerator;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 
 public class Ant extends Creature {
@@ -25,8 +26,6 @@ public class Ant extends Creature {
 
     @Override
     public void tick() {
-//        Tile currentTile = this.world.getTile(this.getTileX(), this.getTileY());
-//        System.out.println(currentTile);
 
         if (movement.equals("top"))
             y -= 1;
@@ -39,11 +38,9 @@ public class Ant extends Creature {
 
         int tempX = (int) this.x - this.getTileX()*Tile.TILEWIDTH + Assets.ant_width/2;
         int tempY = (int) this.y - this.getTileY()*Tile.TILEHEIGHT + Assets.ant_height/2;
-//        System.out.println(tempY + " " + tempX);
-//        System.out.println();
+
         if((tempX > 30 && tempX < 32) && (tempY > 30 && tempY < 32)) {
             this.movement = this.decideDirection();
-
         }
 
     }
@@ -56,10 +53,35 @@ public class Ant extends Creature {
         if(currentTile.left){ options.add("left"); }
         if(currentTile.right){ options.add("right"); }
 
-        int idx = new Random().nextInt(options.size());
-        System.out.println(options);
-        System.out.println(options.get(idx));
-        return options.get(idx);
+        return randomChoiceWithWeights(options);
+    }
+
+    public String randomChoiceWithWeights(ArrayList<String> options){
+
+        double turnBack = 0.1;
+
+        if(turnBack > Math.random()){
+            switch(this.movement){
+                case "top": return "bottom";
+                case "bottom": return "top";
+                case "left": return "right";
+                case "right": return "left";
+                default: return "Error in the value of this.movement.";
+            }
+        }else if(options.size() > 1){
+            switch(this.movement){
+                case "top": options.remove("bottom");
+                            break;
+                case "bottom": options.remove("top");
+                            break;
+                case "left": options.remove("right");
+                            break;
+                case "right": options.remove("left");
+                            break;
+                default: return "Error in the value of this.movement.";
+            }
+        }
+        return options.get(new Random().nextInt(options.size()));
     }
 
 

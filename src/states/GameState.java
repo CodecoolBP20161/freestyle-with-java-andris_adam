@@ -17,14 +17,14 @@ public class GameState extends State {
         super(game);
         world = new WorldGenerator("res/worlds/world1.txt");
         ant = new Ant(game, 9, 2, world);
-        ant1 = new Ant(game, 9, 2, world);
-        ant2 = new Ant(game, 9, 2, world);
-        ant3 = new Ant(game, 9, 2, world);
-        ant4 = new Ant(game, 9, 2, world);
-        ant5 = new Ant(game, 9, 2, world);
-        ant6 = new Ant(game, 9, 2, world);
-        ant7 = new Ant(game, 9, 2, world);
-        ant8 = new Ant(game, 9, 2, world);
+//        ant1 = new Ant(game, 9, 2, world);
+//        ant2 = new Ant(game, 9, 2, world);
+//        ant3 = new Ant(game, 9, 2, world);
+//        ant4 = new Ant(game, 9, 2, world);
+//        ant5 = new Ant(game, 9, 2, world);
+//        ant6 = new Ant(game, 9, 2, world);
+//        ant7 = new Ant(game, 9, 2, world);
+//        ant8 = new Ant(game, 9, 2, world);
 //        ant2 = new Ant(game, 8, 8, world);
     }
 
@@ -32,14 +32,14 @@ public class GameState extends State {
     public void tick() {
         world.tick();
         ant.tick();
-        ant1.tick();
-        ant2.tick();
-        ant3.tick();
-        ant4.tick();
-        ant5.tick();
-        ant6.tick();
-        ant7.tick();
-        ant8.tick();
+//        ant1.tick();
+//        ant2.tick();
+//        ant3.tick();
+//        ant4.tick();
+//        ant5.tick();
+//        ant6.tick();
+//        ant7.tick();
+//        ant8.tick();
 //        ant2.tick();
 
     }
@@ -48,14 +48,14 @@ public class GameState extends State {
     public void render(Graphics g) {
         world.render(g);
         ant.render(g);
-        ant1.render(g);
-        ant2.render(g);
-        ant3.render(g);
-        ant4.render(g);
-        ant5.render(g);
-        ant6.render(g);
-        ant7.render(g);
-        ant8.render(g);
+//        ant1.render(g);
+//        ant2.render(g);
+//        ant3.render(g);
+//        ant4.render(g);
+//        ant5.render(g);
+//        ant6.render(g);
+//        ant7.render(g);
+//        ant8.render(g);
 //        ant2.render(g);
 
     }
