@@ -38,6 +38,7 @@ public class Game implements Runnable{
 
     }
 
+
     private void init(){
         display = new Display(title, width, height);
         display.getFrame().addKeyListener(keyManager);
@@ -80,7 +81,7 @@ public class Game implements Runnable{
     public void run(){
         init();
 
-        int fps = 30;
+        int fps = 45;
         double timePerTick = 1000000000 / fps;
         double delta = 0;
         long now;
@@ -102,7 +103,7 @@ public class Game implements Runnable{
             }
 
             if(timer >= 1000000000){
-                System.out.println("Ticks and Frames: " + ticks);
+//                System.out.println("Ticks and Frames: " + ticks);
                 ticks = 0;
                 timer = 0;
             }

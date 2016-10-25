@@ -3,6 +3,7 @@ package entities.creatures;
 
 import gfx.Assets;
 import main.Game;
+import worlds.WorldGenerator;
 
 import java.awt.*;
 
@@ -10,8 +11,8 @@ public class Player extends Creature{
 
     private Game game;
 
-    public Player(Game game, float x, float y) {
-        super(x, y);
+    public Player(Game game, float x, float y, WorldGenerator world) {
+        super(x, y, world);
         this.game = game;
     }
 
