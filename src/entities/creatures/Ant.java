@@ -80,26 +80,56 @@ public class Ant extends Creature {
             else { g.drawImage(Assets.antRunRight, (int) x, (int) y, null); }
         }
         else if (movement.equals("top")) {
-            last = "up";
-            if (last.equals("left")) {
-                if (timer > 300000000) { g.drawImage(Assets.antStayUpLeft, (int) x, (int) y, null); }
-                else { g.drawImage(Assets.antRunUpLeft, (int) x, (int) y, null); }
-            } else {
-                if (timer > 300000000) { g.drawImage(Assets.antStayUpRight, (int) x, (int) y, null); }
-                else { g.drawImage(Assets.antRunUpRight, (int) x, (int) y, null); }
+            switch (last) {
+                case "left":
+                    if (timer > 300000000) {
+                        g.drawImage(Assets.antStayUpLeft, (int) x, (int) y, null);
+                    } else {
+                        g.drawImage(Assets.antRunUpLeft, (int) x, (int) y, null);
+                    }
+                    break;
+                case "right":
+                    if (timer > 300000000) {
+                        g.drawImage(Assets.antStayUpRight, (int) x, (int) y, null);
+                    } else {
+                        g.drawImage(Assets.antRunUpRight, (int) x, (int) y, null);
+                    }
+                    break;
+                default:
+                    if (timer > 300000000) {
+                        g.drawImage(Assets.antStayUpRight, (int) x, (int) y, null);
+                    } else {
+                        g.drawImage(Assets.antRunUpRight, (int) x, (int) y, null);
+                    }
+                    break;
             }
+            last = "up";
         }
         else if (movement.equals("bottom")) {
-            last = "down";
-            if (last.equals("left")) {
-                if (timer > 300000000) {
-                    g.drawImage(Assets.antStayDownLeft, (int) x, (int) y, null); }
-                else { g.drawImage(Assets.antRunDownLeft, (int) x, (int) y, null); }
-            } else {
-                if (timer > 300000000) {
-                    g.drawImage(Assets.antStayDownRight, (int) x, (int) y, null); }
-                else { g.drawImage(Assets.antRunDownRight, (int) x, (int) y, null); }
+            switch (last) {
+                case "left":
+                    if (timer > 300000000) {
+                        g.drawImage(Assets.antStayDownLeft, (int) x, (int) y, null);
+                    } else {
+                        g.drawImage(Assets.antRunDownLeft, (int) x, (int) y, null);
+                    }
+                    break;
+                case "right":
+                    if (timer > 300000000) {
+                        g.drawImage(Assets.antStayDownRight, (int) x, (int) y, null);
+                    } else {
+                        g.drawImage(Assets.antRunDownRight, (int) x, (int) y, null);
+                    }
+                    break;
+                default:
+                    if (timer > 300000000) {
+                        g.drawImage(Assets.antStayDownRight, (int) x, (int) y, null);
+                    } else {
+                        g.drawImage(Assets.antRunDownRight, (int) x, (int) y, null);
+                    }
+                    break;
             }
+            last = "down";
 
         } else if (last.equals("left")){ g.drawImage(Assets.antStayLeft, (int) x, (int) y, null); }
         else if (last.equals("right")) { g.drawImage(Assets.antStayRight, (int) x, (int) y, null); }

@@ -57,5 +57,7 @@ public class Assets {
 
         sun = suns.crop(24, 53, sun_width, sun_height);
 
+        SpriteSheet tounge = new SpriteSheet(ImageLoader.loadImage("/textures/sheetv2.png"));
+
     }
 }
