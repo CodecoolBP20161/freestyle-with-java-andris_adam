@@ -2,10 +2,10 @@ package utils;
 
 import gfx.Assets;
 import tiles.Tile;
+import javazoom.jl.decoder.JavaLayerException;
+import javazoom.jl.player.*;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class Utils {
     public static String loadFileAsString(String path){
@@ -42,6 +42,20 @@ public class Utils {
 
     public static int placeInTileY(float y){
         return (int) (Tile.TILEHEIGHT*y + Tile.TILEHEIGHT/2)-Assets.ant_height/2;
+    }
+
+    public static void playMusic() {
+        try{
+            File file = new File("/home/handris/CodeCool/freestyle-with-java-andris_adam/src/utils/down_music.mp3");
+            FileInputStream fis = new FileInputStream(file);
+            BufferedInputStream bis = new BufferedInputStream(fis);
+
+            Player player  = new Player(bis);
+            player.play();
+
+        }catch(JavaLayerException | IOException ex){
+            ex.printStackTrace();
+        }
     }
 
 }
