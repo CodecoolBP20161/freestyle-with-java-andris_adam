@@ -57,6 +57,8 @@ public class Ant extends Creature {
         if(currentTile.right){ options.add("right"); }
 
         int idx = new Random().nextInt(options.size());
+        System.out.println(options);
+        System.out.println(options.get(idx));
         return options.get(idx);
     }
 
@@ -69,22 +71,22 @@ public class Ant extends Creature {
         if (timer > 600000000) {
             timer = 0;
         }
-        if (game.getKeyManager().left) {
+        if (movement.equals("left")) {
             last = "left";
             if (timer > 300000000) { g.drawImage(Assets.antStayLeft, (int) x, (int) y, null); }
             else { g.drawImage(Assets.antRunLeft, (int) x, (int) y, null); }
         }
-        else if (game.getKeyManager().right) {
+        else if (movement.equals("right")) {
             last = "right";
             if (timer > 300000000) { g.drawImage(Assets.antStayRight, (int) x, (int) y, null); }
             else { g.drawImage(Assets.antRunRight, (int) x, (int) y, null); }
         }
-        else if (game.getKeyManager().up) {
+        else if (movement.equals("top")) {
             last = "up";
             if (timer > 300000000) { g.drawImage(Assets.antStayUp, (int) x, (int) y, null); }
             else { g.drawImage(Assets.antRunUp, (int) x, (int) y, null); }
         }
-        else if (game.getKeyManager().down) {
+        else if (movement.equals("bottom")) {
             last = "down";
             if (timer > 300000000) { g.drawImage(Assets.antStayDown, (int) x, (int) y, null); }
             else { g.drawImage(Assets.antRunDown, (int) x, (int) y, null); }

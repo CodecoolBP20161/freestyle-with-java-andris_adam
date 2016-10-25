@@ -8,7 +8,7 @@ public class Tile {
 
     public boolean top, bottom, left, right;
 
-    public static Tile[] tiles = new Tile[16];
+    public static Tile[] tiles = new Tile[32];
     public static Tile grassTile = new GrassTile(0);
     public static Tile dirtTile = new DirtTile(1);
     public static Tile grassDirtTile = new GrassDirtTile(2);
@@ -23,6 +23,11 @@ public class Tile {
     public static Tile tunnelLTopLeftTile = new TunnelLTopLTile(11);
     public static Tile tunnelHorTile = new TunnelHorTile(12);
     public static Tile tunnelVerTile = new TunnelVerTile(13);
+    public static Tile tunnelEndTopTile = new TunnelEndTopTile(14);
+    public static Tile tunnelEndBottomTile = new TunnelEndBottomTile(15);
+    public static Tile tunnelEndLeftTile = new TunnelEndLeftTile(17);
+    public static Tile tunnelEndRightTile = new TunnelEndRightTile(16);
+
 
 
 

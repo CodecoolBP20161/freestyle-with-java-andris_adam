@@ -29,6 +29,7 @@ public class Assets {
         tunnelHor = sheet.crop(477, 279, width, height);
         tunnelVer = sheet.crop(477, 213, width, height);
 
+
         SpriteSheet ants = new SpriteSheet(ImageLoader.loadImage("/textures/ants.png"));
 
         antStayLeft = ants.crop(20, 14, ant_width, ant_height);
