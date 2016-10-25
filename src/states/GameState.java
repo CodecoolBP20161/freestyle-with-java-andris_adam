@@ -16,7 +16,7 @@ public class GameState extends State {
     public GameState(Game game){
         super(game);
         world = new WorldGenerator("res/worlds/world1.txt");
-        ant = new Ant(game, 9, 2, world);
+        ant = new Ant(game, 4, 4, world);
     }
 
     @Override
