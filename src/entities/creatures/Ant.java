@@ -2,6 +2,7 @@ package entities.creatures;
 
 import gfx.Assets;
 import main.Game;
+import states.GameState;
 import tiles.Tile;
 import utils.Utils;
 import worlds.WorldGenerator;
@@ -27,7 +28,6 @@ public class Ant extends Creature {
     public void tick() {
 //        Tile currentTile = this.world.getTile(this.getTileX(), this.getTileY());
 //        System.out.println(currentTile);
-
         if (movement.equals("top"))
             y -= 1;
         if (movement.equals("bottom"))
@@ -57,8 +57,6 @@ public class Ant extends Creature {
         if(currentTile.right){ options.add("right"); }
 
         int idx = new Random().nextInt(options.size());
-        System.out.println(options);
-        System.out.println(options.get(idx));
         return options.get(idx);
     }
 
@@ -83,18 +81,30 @@ public class Ant extends Creature {
         }
         else if (movement.equals("top")) {
             last = "up";
-            if (timer > 300000000) { g.drawImage(Assets.antStayUp, (int) x, (int) y, null); }
-            else { g.drawImage(Assets.antRunUp, (int) x, (int) y, null); }
+            if (last.equals("left")) {
+                if (timer > 300000000) { g.drawImage(Assets.antStayUpLeft, (int) x, (int) y, null); }
+                else { g.drawImage(Assets.antRunUpLeft, (int) x, (int) y, null); }
+            } else {
+                if (timer > 300000000) { g.drawImage(Assets.antStayUpRight, (int) x, (int) y, null); }
+                else { g.drawImage(Assets.antRunUpRight, (int) x, (int) y, null); }
+            }
         }
         else if (movement.equals("bottom")) {
             last = "down";
-            if (timer > 300000000) { g.drawImage(Assets.antStayDown, (int) x, (int) y, null); }
-            else { g.drawImage(Assets.antRunDown, (int) x, (int) y, null); }
+            if (last.equals("left")) {
+                if (timer > 300000000) {
+                    g.drawImage(Assets.antStayDownLeft, (int) x, (int) y, null); }
+                else { g.drawImage(Assets.antRunDownLeft, (int) x, (int) y, null); }
+            } else {
+                if (timer > 300000000) {
+                    g.drawImage(Assets.antStayDownRight, (int) x, (int) y, null); }
+                else { g.drawImage(Assets.antRunDownRight, (int) x, (int) y, null); }
+            }
 
         } else if (last.equals("left")){ g.drawImage(Assets.antStayLeft, (int) x, (int) y, null); }
         else if (last.equals("right")) { g.drawImage(Assets.antStayRight, (int) x, (int) y, null); }
-        else if (last.equals("up")) { g.drawImage(Assets.antStayUp, (int) x, (int) y, null); }
-        else if (last.equals("down")) { g.drawImage(Assets.antStayDown, (int) x, (int) y, null); }
+        else if (last.equals("up")) { g.drawImage(Assets.antStayUpLeft, (int) x, (int) y, null); }
+        else if (last.equals("down")) { g.drawImage(Assets.antStayDownLeft, (int) x, (int) y, null); }
         else { g.drawImage(Assets.antStayLeft, (int) x, (int) y, null); }
 
     }

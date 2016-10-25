@@ -25,8 +25,9 @@ public class Tile {
     public static Tile tunnelVerTile = new TunnelVerTile(13);
     public static Tile tunnelEndTopTile = new TunnelEndTopTile(14);
     public static Tile tunnelEndBottomTile = new TunnelEndBottomTile(15);
-    public static Tile tunnelEndLeftTile = new TunnelEndLeftTile(17);
-    public static Tile tunnelEndRightTile = new TunnelEndRightTile(16);
+    public static Tile tunnelEndLeftTile = new TunnelEndLeftTile(16);
+    public static Tile tunnelEndRightTile = new TunnelEndRightTile(17);
+    public static Tile sunTile = new SunTile(18);
 
 
 

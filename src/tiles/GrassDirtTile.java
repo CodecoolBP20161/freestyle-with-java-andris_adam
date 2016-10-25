@@ -4,7 +4,7 @@ import gfx.Assets;
 
 public class GrassDirtTile extends Tile {
     public GrassDirtTile(int id) {
-        super(Assets.dirt, id);
+        super(Assets.grassDirt, id);
         this.top = false;
         this.bottom = false;
         this.left = false;
