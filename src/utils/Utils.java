@@ -45,17 +45,25 @@ public class Utils {
     }
 
     public static void playMusic() {
-        try{
+        try {
             File file = new File("/home/handris/CodeCool/freestyle-with-java-andris_adam/src/utils/down_music.mp3");
             FileInputStream fis = new FileInputStream(file);
             BufferedInputStream bis = new BufferedInputStream(fis);
 
-            Player player  = new Player(bis);
+            Player player = new Player(bis);
             player.play();
 
-        }catch(JavaLayerException | IOException ex){
+        } catch (JavaLayerException | IOException ex) {
             ex.printStackTrace();
         }
+    }
+
+    public static int placePlayerInTileX(float x){
+        return (int) (Tile.TILEWIDTH*x + Tile.TILEWIDTH/2) - Assets.tongue_width/2;
+    }
+
+    public static int placePlayerInTileY(float y){
+        return (int) (Tile.TILEHEIGHT*y + Tile.TILEHEIGHT/2)-Assets.tongue_height/2;
     }
 
 }
