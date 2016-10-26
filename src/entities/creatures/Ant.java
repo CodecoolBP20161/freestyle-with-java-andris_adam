@@ -34,8 +34,29 @@ public class Ant extends Creature {
         }
     }
 
+    public void biteTongue(){
+//        System.out.println("loop beings:");
+        for(ArrayList<Double> element : player.tongueBits){
+//            if(!alive){
+//                System.out.println(element);
+//                System.out.println(this.x);
+//                System.out.println(this.y);
+//                System.out.println();
+//            }
+
+            if(element.get(0)-23 > this.x && element.get(0)-26 < this.x &&
+                    element.get(1)+1 > this.y && element.get(1)-1 < this.y){
+                System.out.println("valami");
+            }
+        }
+//        System.out.println("------------------");
+
+
+    }
+
     @Override
     public void tick() {
+        biteTongue();
         amIEaten(player.getX(), player.getY());
         if(!alive){
             return;
