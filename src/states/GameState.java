@@ -45,6 +45,7 @@ public class GameState extends State {
         world.render(g);
         for (Ant anAntObjList : antObjList) { anAntObjList.render(g); }
         g.drawImage(Assets.sun, 90, -60, null);
+        g.drawImage(Assets.queen, 500, 620, null);
         player.render(g);
 
     }

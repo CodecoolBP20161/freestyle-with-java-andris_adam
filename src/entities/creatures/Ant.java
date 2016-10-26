@@ -27,11 +27,13 @@ public class Ant extends Creature {
 
     }
 
-    public void amIEaten(float x, float y){
+    public boolean amIEaten(float x, float y){
 
         if( (this.x < x && this.x+Assets.ant_width > x) && (this.y < y && this.y+Assets.ant_height > y)){
             this.alive = false;
+            return true;
         }
+        return false;
     }
 
     @Override

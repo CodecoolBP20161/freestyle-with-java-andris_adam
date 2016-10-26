@@ -14,7 +14,7 @@ public class Assets {
     tunnelLtopR, tunnelLtopL, tunnelLbottomL, tunnelLbottomR, tunnelHor, tunnelVer, antStayLeft, antRunLeft,
     antStayRight, antRunRight, antStayUpLeft, antRunUpLeft, antStayUpRight, antRunUpRight, antStayDownLeft,
     antRunDownLeft, antStayDownRight, antRunDownRight, sun, tunnelEndLeft, tunnelEndRight, tunnelEndTop, tunnelEndBottom,
-    sunTile, tongueTipDown, tongueTipLeft, tongueTipRight, tongueBitVer, tongueBitHor;
+    sunTile, tongueTipDown, tongueTipLeft, tongueTipRight, tongueBitVer, tongueBitHor, queen;
 
     public static void init(){
         SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/sheetv3.png"));
@@ -66,5 +66,9 @@ public class Assets {
         tongueTipRight = tongue.crop(25, 16, tongue_height, tongue_width);
         tongueBitVer = tongue.crop(14, 1, 8, 3);
         tongueBitHor = tongue.crop(19, 26, 3, 8);
+
+        SpriteSheet antQueen = new SpriteSheet(ImageLoader.loadImage("/textures/queen.png"));
+
+        queen = antQueen.crop(8, 4, 61, 51);
     }
 }
