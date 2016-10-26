@@ -7,15 +7,17 @@ public class Assets {
     private static final int width = 62, height = 62;
     public static final int ant_width = 27, ant_height = 22;
     private static final int sun_width = 193, sun_height = 132;
+    public static final int tongue_width = 11, tongue_height = 17;
+    public static final int tongueBitWidth = 8, tongueBitHeight = 3;
 
     public static BufferedImage grass, dirt, grassDirt, tunnelx, tunnelTtop, tunnelTbottom, tunnelTleft, tunnelTright,
     tunnelLtopR, tunnelLtopL, tunnelLbottomL, tunnelLbottomR, tunnelHor, tunnelVer, antStayLeft, antRunLeft,
     antStayRight, antRunRight, antStayUpLeft, antRunUpLeft, antStayUpRight, antRunUpRight, antStayDownLeft,
     antRunDownLeft, antStayDownRight, antRunDownRight, sun, tunnelEndLeft, tunnelEndRight, tunnelEndTop, tunnelEndBottom,
-    sunTile;
+    sunTile, tongueTipDown, tongueTipLeft, tongueTipRight, tongueBitVer, tongueBitHor;
 
     public static void init(){
-        SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/sheetv2.png"));
+        SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/sheetv3.png"));
 
         grass = sheet.crop(15, 15, width, height);
         dirt = sheet.crop(279, 81, width, height);
@@ -57,7 +59,12 @@ public class Assets {
 
         sun = suns.crop(24, 53, sun_width, sun_height);
 
-        SpriteSheet tounge = new SpriteSheet(ImageLoader.loadImage("/textures/sheetv2.png"));
+        SpriteSheet tongue = new SpriteSheet(ImageLoader.loadImage("/textures/tonguesheet.png"));
 
+        tongueTipDown = tongue.crop(11, 1, tongue_width, tongue_height);
+        tongueTipLeft = tongue.crop(1, 23, tongue_height, tongue_width);
+        tongueTipRight = tongue.crop(25, 16, tongue_height, tongue_width);
+        tongueBitVer = tongue.crop(14, 1, 8, 3);
+        tongueBitHor = tongue.crop(19, 26, 3, 8);
     }
 }

@@ -44,4 +44,12 @@ public class Utils {
         return (int) (Tile.TILEHEIGHT*y + Tile.TILEHEIGHT/2)-Assets.ant_height/2;
     }
 
+    public static int placePlayerInTileX(float x){
+        return (int) (Tile.TILEWIDTH*x + Tile.TILEWIDTH/2) - Assets.tongue_width/2;
+    }
+
+    public static int placePlayerInTileY(float y){
+        return (int) (Tile.TILEHEIGHT*y + Tile.TILEHEIGHT/2)-Assets.tongue_height/2;
+    }
+
 }
