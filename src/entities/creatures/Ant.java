@@ -27,36 +27,19 @@ public class Ant extends Creature {
 
     }
 
-    public void amIEaten(float x, float y){
+
+
+    public boolean amIEaten(float x, float y){
 
         if( (this.x < x && this.x+Assets.ant_width > x) && (this.y < y && this.y+Assets.ant_height > y)){
             this.alive = false;
+            return true;
         }
-    }
-
-    public void biteTongue(){
-//        System.out.println("loop beings:");
-        for(ArrayList<Double> element : player.tongueBits){
-//            if(!alive){
-//                System.out.println(element);
-//                System.out.println(this.x);
-//                System.out.println(this.y);
-//                System.out.println();
-//            }
-
-            if(element.get(0)-23 > this.x && element.get(0)-26 < this.x &&
-                    element.get(1)+1 > this.y && element.get(1)-1 < this.y){
-                System.out.println("valami");
-            }
-        }
-//        System.out.println("------------------");
-
-
+        return false;
     }
 
     @Override
     public void tick() {
-        biteTongue();
         amIEaten(player.getX(), player.getY());
         if(!alive){
             return;

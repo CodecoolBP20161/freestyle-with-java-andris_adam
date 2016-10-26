@@ -15,7 +15,7 @@ public class Player extends Creature{
 
     private String last = "down";
     private Game game;
-    private static final Integer[] VALUES = new Integer[] {28, 29, 30, 31, 32};
+    private static final Integer[] VALUES = new Integer[] {29, 30, 31};
     public ArrayList<ArrayList<Double>> tongueBits = new ArrayList<>();
 
 
@@ -30,6 +30,7 @@ public class Player extends Creature{
         Tile currentTile = this.world.getTile(getTileX(), getTileY());
         int tempX = (int) this.x - this.getTileX()*Tile.TILEWIDTH + Assets.tongue_width/2;
         int tempY = (int) this.y - this.getTileY()*Tile.TILEHEIGHT + Assets.tongue_height/2;
+        endGame();
 
         if(game.getKeyManager().up) {
             ArrayList<Double> bits = new ArrayList<>();
@@ -189,7 +190,12 @@ public class Player extends Creature{
             else { x += 0; } }
     }
 
-    // TODO: egyszerre ne működjön le és fel
+    public void endGame () {
+        if((this.x < 550 && this.x+61 > 550) && (this.y < 650 && this.y+51 > 650)) {
+            game.stop();
+        }
+    }
+
 
     @Override
     public void render(Graphics g) {
@@ -231,6 +237,8 @@ public class Player extends Creature{
         else if (last.equals("left"))
             g.drawImage(Assets.tongueTipLeft, (int) x, (int) y, null);
     }
+
+
 
 
 }
