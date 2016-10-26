@@ -15,7 +15,7 @@ public class Player extends Creature{
 
     private String last = "down";
     private Game game;
-    private static final Integer[] VALUES = new Integer[] {28, 29, 30, 31, 32};
+    private static final Integer[] VALUES = new Integer[] {29, 30, 31};
     public ArrayList<ArrayList<Double>> tongueBits = new ArrayList<>();
 
 
@@ -231,6 +231,8 @@ public class Player extends Creature{
         else if (last.equals("left"))
             g.drawImage(Assets.tongueTipLeft, (int) x, (int) y, null);
     }
+
+
 
 
 }

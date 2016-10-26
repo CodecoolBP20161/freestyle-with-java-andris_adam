@@ -29,7 +29,7 @@ public class GameState extends State {
         for (int i = 0; i < ants.antCount; i++) {
             int x = ants.antsList.get(i).get(0);
             int y = ants.antsList.get(i).get(1);
-            antObjList.add(new Ant(game, x, y, world));
+            antObjList.add(new Ant(game, x, y, world, player));
         }
     }
 

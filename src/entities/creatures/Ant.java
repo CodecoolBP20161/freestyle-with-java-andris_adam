@@ -18,16 +18,28 @@ public class Ant extends Creature {
     private long lastTime = System.nanoTime();
     private String last = "";
     private String movement = "left";
+    private Player player;
 
-    public Ant(Game game, float x, float y, WorldGenerator world) {
+    public Ant(Game game, float x, float y, WorldGenerator world, Player player) {
         super(Utils.placeInTileX(x), Utils.placeInTileY(y), world);
         this.game = game;
+        this.player = player;
+
+    }
+
+    public void amIEaten(float x, float y){
+
+        if( (this.x < x && this.x+Assets.ant_width > x) && (this.y < y && this.y+Assets.ant_height > y)){
+            this.alive = false;
+        }
     }
 
     @Override
     public void tick() {
-//        Tile currentTile = this.world.getTile(this.getTileX(), this.getTileY());
-//        System.out.println(currentTile);
+        amIEaten(player.getX(), player.getY());
+        if(!alive){
+            return;
+        }
         if (movement.equals("top"))
             y -= 1;
         if (movement.equals("bottom"))
@@ -39,13 +51,11 @@ public class Ant extends Creature {
 
         int tempX = (int) this.x - this.getTileX()*Tile.TILEWIDTH + Assets.ant_width/2;
         int tempY = (int) this.y - this.getTileY()*Tile.TILEHEIGHT + Assets.ant_height/2;
-//        System.out.println(tempY + " " + tempX);
-//        System.out.println();
+
         if((tempX > 30 && tempX < 32) && (tempY > 30 && tempY < 32)) {
             this.movement = this.decideDirection();
 
         }
-
     }
 
     public String decideDirection(){
@@ -63,6 +73,9 @@ public class Ant extends Creature {
 
     @Override
     public void render(Graphics g) {
+        if(!alive){
+            return;
+        }
         long now = System.nanoTime();
         timer += now - lastTime;
         lastTime = now;

@@ -27,4 +27,11 @@ public abstract class Entity {
         return (int) this.y / Tile.TILEHEIGHT;
     }
 
+    public float getX() {
+        return x;
+    }
+
+    public float getY() {
+        return y;
+    }
 }
