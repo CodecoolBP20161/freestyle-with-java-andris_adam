@@ -19,6 +19,7 @@ public abstract class Entity {
     public abstract void tick();
     public abstract void render(Graphics g);
 
+
     public int getTileX(){
         return (int) this.x / Tile.TILEWIDTH;
     }
@@ -27,4 +28,11 @@ public abstract class Entity {
         return (int) this.y / Tile.TILEHEIGHT;
     }
 
+    public float getX() {
+        return x;
+    }
+
+    public float getY() {
+        return y;
+    }
 }

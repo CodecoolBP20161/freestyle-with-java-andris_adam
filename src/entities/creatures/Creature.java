@@ -5,10 +5,10 @@ import worlds.WorldGenerator;
 
 public abstract class Creature extends Entity {
 
-    protected int health;
+    protected boolean alive;
 
     public Creature(float x, float y, WorldGenerator world) {
         super(x, y, world);
-        health = 10;
+        alive = true;
     }
 }

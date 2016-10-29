@@ -6,9 +6,6 @@ import utils.Utils;
 import java.awt.*;
 import java.util.Arrays;
 
-/**
- * Created by andris on 10/24/16.
- */
 public class WorldGenerator {
 
     private int width, height;

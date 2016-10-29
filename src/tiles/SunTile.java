@@ -2,9 +2,9 @@ package tiles;
 
 import gfx.Assets;
 
-public class TunnelEndBottomTile extends Tile {
-    public TunnelEndBottomTile(int id) {
-        super(Assets.tunnelEndBottom, id);
+public class SunTile extends Tile {
+    public SunTile(int id) {
+        super(Assets.sunTile, id);
         this.top = false;
         this.bottom = true;
         this.left = false;
